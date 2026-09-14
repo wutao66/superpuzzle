@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f4" />
+    <title>Super Puzzle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Super Puzzle 首页">
+          <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
+          <span>SUPER PUZZLE</span>
+        </a>
+        <span class="topbar-note">把一张照片，变成一场专注</span>
+      </header>
+
+      <section id="top" class="setup-view" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow">YOUR IMAGE · YOUR PACE</p>
+          <h1 id="page-title">拼出属于你的<br /><em>完整画面</em></h1>
+          <p class="intro-text">选择一张照片，设定难度，剩下的交给你的观察力。<br />拼图会根据照片比例自动切成大小合适的矩形。</p>
+        </div>
+
+        <div class="setup-grid">
+          <label class="upload-zone" for="image-input">
+            <input id="image-input" type="file" accept="image/*" />
+            <div class="upload-preview" id="upload-preview">
+              <span class="upload-icon">＋</span>
+              <strong>选择一张图片</strong>
+              <span>支持 JPG、PNG、WEBP</span>
+            </div>
+          </label>
+
+          <div class="difficulty-panel">
+            <div class="panel-heading"><span>选择难度</span><span class="selected-count" id="selected-count">9 片</span></div>
+            <div class="difficulty-list" role="radiogroup" aria-label="拼图难度">
+              <button class="difficulty active" data-pieces="9" data-label="简单" role="radio" aria-checked="true"><span class="difficulty-name">简单</span><span class="difficulty-meta">9 片 · 约 2 分钟</span><b>01</b></button>
+              <button class="difficulty" data-pieces="100" data-label="普通" role="radio" aria-checked="false"><span class="difficulty-name">普通</span><span class="difficulty-meta">100 片 · 约 10 分钟</span><b>02</b></button>
+              <button class="difficulty" data-pieces="300" data-label="困难" role="radio" aria-checked="false"><span class="difficulty-name">困难</span><span class="difficulty-meta">300 片 · 约 30 分钟</span><b>03</b></button>
+              <button class="difficulty" data-pieces="1000" data-label="噩梦" role="radio" aria-checked="false"><span class="difficulty-name">噩梦</span><span class="difficulty-meta">1000 片 · 约 90 分钟</span><b>04</b></button>
+              <button class="difficulty" data-pieces="2000" data-label="地狱" role="radio" aria-checked="false"><span class="difficulty-name">地狱</span><span class="difficulty-meta">2000 片 · 挑战极限</span><b>05</b></button>
+            </div>
+            <button class="primary-button" id="start-button" disabled><span>开始拼图</span><span>→</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-view hidden" id="game-view" aria-labelledby="game-title">
+        <div class="game-header"><div><p class="eyebrow">CURRENT PUZZLE</p><h2 id="game-title">准备好了吗？</h2></div><button class="text-button" id="back-button">← 重新选择</button></div>
+        <div class="game-toolbar"><div class="stat"><span>难度</span><strong id="game-difficulty">简单</strong></div><div class="stat"><span>完成度</span><strong id="progress-value">0%</strong></div><div class="stat timer-stat"><span>用时</span><strong id="timer">00:00</strong></div><button class="reset-button" id="reset-button" title="重新打乱">↻ <span>重新打乱</span></button></div>
+        <div class="board-wrap"><div class="board" id="board" aria-label="拼图棋盘"></div><div class="board-hint" id="board-hint">点击两块拼图交换位置</div></div>
+      </section>
+      <footer><span>SUPER PUZZLE / 2026</span><span>专注当下，享受每一块</span></footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
