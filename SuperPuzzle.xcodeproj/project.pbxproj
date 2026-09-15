@@ -3,72 +3,102 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		736666A201F4D10D355CA317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1737BDE5AF4E71C1E6AE45B /* Assets.xcassets */; };
-		A10000000000000000000001 /* SuperPuzzleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* SuperPuzzleApp.swift */; };
-		A10000000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000002 /* ContentView.swift */; };
-		A10000000000000000000003 /* PuzzleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000003 /* PuzzleModel.swift */; };
+		2EA7E51C29C5A9CC1F514175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6EF06E94320C329CB907F3 /* Assets.xcassets */; };
+		7473752D02B62FC7BA17189D /* SuperPuzzleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9383922BF378A57917D0B0E /* SuperPuzzleApp.swift */; };
+		7AB085FCDD9511204164AB36 /* PuzzleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C296EE9FF4597197716209C /* PuzzleModel.swift */; };
+		99BD458BC82848DF0034F6DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F5570B9807AE413C7BCFD1 /* ContentView.swift */; };
+		F9B71B6D99DCBF7E43B99F97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7FB720ACB619FC65608043 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A20000000000000000000000 /* SuperPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A20000000000000000000001 /* SuperPuzzleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperPuzzleApp.swift; sourceTree = "<group>"; };
-		A20000000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A20000000000000000000003 /* PuzzleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleModel.swift; sourceTree = "<group>"; };
-		F1737BDE5AF4E71C1E6AE45B /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0E7FB720ACB619FC65608043 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7B47A77FE8335830A56F04B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8C296EE9FF4597197716209C /* PuzzleModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PuzzleModel.swift; sourceTree = "<group>"; };
+		C9383922BF378A57917D0B0E /* SuperPuzzleApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuperPuzzleApp.swift; sourceTree = "<group>"; };
+		CE6EF06E94320C329CB907F3 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4461FC118614DEFC69BC220 /* SuperPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6F5570B9807AE413C7BCFD1 /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A30000000000000000000003 /* Frameworks */ = {
+		251F404A5B46BC90085D971F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B71B6D99DCBF7E43B99F97 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A40000000000000000000000 = {
+		1176CC378A76DDEB384F6F13 = {
 			isa = PBXGroup;
 			children = (
-				A40000000000000000000001 /* SuperPuzzleIOS */,
-				A40000000000000000000002 /* Products */,
+				A45D457465BD606DBB522773 /* Products */,
+				C12FF0D99CD9302FCAF889F5 /* Frameworks */,
+				25ABD460DFF60250C7448F84 /* SuperPuzzleIOS */,
 			);
 			sourceTree = "<group>";
 		};
-		A40000000000000000000001 /* SuperPuzzleIOS */ = {
+		25ABD460DFF60250C7448F84 /* SuperPuzzleIOS */ = {
 			isa = PBXGroup;
 			children = (
-				A20000000000000000000001 /* SuperPuzzleApp.swift */,
-				A20000000000000000000002 /* ContentView.swift */,
-				A20000000000000000000003 /* PuzzleModel.swift */,
-				F1737BDE5AF4E71C1E6AE45B /* Assets.xcassets */,
+				C9383922BF378A57917D0B0E /* SuperPuzzleApp.swift */,
+				D6F5570B9807AE413C7BCFD1 /* ContentView.swift */,
+				8C296EE9FF4597197716209C /* PuzzleModel.swift */,
+				CE6EF06E94320C329CB907F3 /* Assets.xcassets */,
+				D70A0C8A909050A020069EE2 /* Preview Content */,
 			);
 			path = SuperPuzzleIOS;
 			sourceTree = "<group>";
 		};
-		A40000000000000000000002 /* Products */ = {
+		4738E906C55846861626627D /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A20000000000000000000000 /* SuperPuzzle.app */,
+				0E7FB720ACB619FC65608043 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A45D457465BD606DBB522773 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4461FC118614DEFC69BC220 /* SuperPuzzle.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C12FF0D99CD9302FCAF889F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4738E906C55846861626627D /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D70A0C8A909050A020069EE2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7B47A77FE8335830A56F04B9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A50000000000000000000001 /* SuperPuzzle */ = {
+		FD92738EA5A3C2E2A75F75C1 /* SuperPuzzle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A60000000000000000000002 /* Build configuration list for PBXNativeTarget "SuperPuzzle" */;
+			buildConfigurationList = 104FCD55B4A5063ABDC26A1B /* Build configuration list for PBXNativeTarget "SuperPuzzle" */;
 			buildPhases = (
-				A30000000000000000000001 /* Sources */,
-				A30000000000000000000002 /* Resources */,
-				A30000000000000000000003 /* Frameworks */,
+				219FBE75D76E836996EA1D91 /* Sources */,
+				251F404A5B46BC90085D971F /* Frameworks */,
+				B58158ACCD0163806583AD07 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -76,154 +106,248 @@
 			);
 			name = SuperPuzzle;
 			productName = SuperPuzzle;
-			productReference = A20000000000000000000000 /* SuperPuzzle.app */;
+			productReference = D4461FC118614DEFC69BC220 /* SuperPuzzle.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A70000000000000000000001 /* Project object */ = {
+		7257986C8A7A2B2749BE135D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
-				ORGANIZATIONNAME = SuperPuzzle;
 				TargetAttributes = {
-					A50000000000000000000001 = {
-						CreatedOnToolsVersion = 16.0;
+					FD92738EA5A3C2E2A75F75C1 = {
+						DevelopmentTeam = S6DQQQS769;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = A60000000000000000000001 /* Build configuration list for PBXProject "SuperPuzzle" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = D0386F54EFA9EC46786794D2 /* Build configuration list for PBXProject "SuperPuzzle" */;
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = A40000000000000000000000;
-			productRefGroup = A40000000000000000000002 /* Products */;
+			mainGroup = 1176CC378A76DDEB384F6F13;
+			productRefGroup = A45D457465BD606DBB522773 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A50000000000000000000001 /* SuperPuzzle */,
+				FD92738EA5A3C2E2A75F75C1 /* SuperPuzzle */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A30000000000000000000002 /* Resources */ = {
+		B58158ACCD0163806583AD07 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				736666A201F4D10D355CA317 /* Assets.xcassets in Resources */,
+				2EA7E51C29C5A9CC1F514175 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A30000000000000000000001 /* Sources */ = {
+		219FBE75D76E836996EA1D91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A10000000000000000000001 /* SuperPuzzleApp.swift in Sources */,
-				A10000000000000000000002 /* ContentView.swift in Sources */,
-				A10000000000000000000003 /* PuzzleModel.swift in Sources */,
+				7473752D02B62FC7BA17189D /* SuperPuzzleApp.swift in Sources */,
+				99BD458BC82848DF0034F6DF /* ContentView.swift in Sources */,
+				7AB085FCDD9511204164AB36 /* PuzzleModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A80000000000000000000001 /* BuildConfiguration */ = {
+		420E988B3AD53ED5A952C424 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Super Puzzle";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.superpuzzle.app;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
+			name = Release;
 		};
-		A80000000000000000000002 /* BuildConfiguration */ = {
+		998F2883AF46D3FC3BC6A428 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B9DA665CB881CF5F9E17B10E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
+				DEVELOPMENT_TEAM = S6DQQQS769;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SuperPuzzleIOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Super Puzzle";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.superpuzzle.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
+			name = Debug;
 		};
-		A80000000000000000000003 /* BuildConfiguration */ = {
+		FD71228CFECFC47437108ED4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S6DQQQS769;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SuperPuzzleIOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Super Puzzle";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.superpuzzle.app;
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-		};
-		A80000000000000000000004 /* BuildConfiguration */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.superpuzzle.app;
-				SWIFT_VERSION = 5.0;
-			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A60000000000000000000001 /* Build configuration list for PBXProject "SuperPuzzle" */ = {
+		104FCD55B4A5063ABDC26A1B /* Build configuration list for PBXNativeTarget "SuperPuzzle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A80000000000000000000001 /* BuildConfiguration */,
-				A80000000000000000000002 /* BuildConfiguration */,
+				FD71228CFECFC47437108ED4 /* Release */,
+				B9DA665CB881CF5F9E17B10E /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A60000000000000000000002 /* Build configuration list for PBXNativeTarget "SuperPuzzle" */ = {
+		D0386F54EFA9EC46786794D2 /* Build configuration list for PBXProject "SuperPuzzle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A80000000000000000000003 /* BuildConfiguration */,
-				A80000000000000000000004 /* BuildConfiguration */,
+				998F2883AF46D3FC3BC6A428 /* Debug */,
+				420E988B3AD53ED5A952C424 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A70000000000000000000001 /* Project object */;
+	rootObject = 7257986C8A7A2B2749BE135D /* Project object */;
 }

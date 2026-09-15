@@ -22,7 +22,8 @@ struct ContentView: View {
         }
         .task(id: selectedPhoto) {
             guard let selectedPhoto else { return }
-            guard let data = try? await selectedPhoto.loadTransferable(type: Data.self), let imageData = data, let image = UIImage(data: imageData) else { return }
+            guard let data = try? await selectedPhoto.loadTransferable(type: Data.self),
+                  let image = UIImage(data: data) else { return }
             sourceImage = image
         }
     }
