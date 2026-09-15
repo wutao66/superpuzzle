@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		2EA7E51C29C5A9CC1F514175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6EF06E94320C329CB907F3 /* Assets.xcassets */; };
 		7473752D02B62FC7BA17189D /* SuperPuzzleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9383922BF378A57917D0B0E /* SuperPuzzleApp.swift */; };
+		78EF4687106BEE82B151BA3D /* PuzzlePieceShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB86550294F6B61835D921A /* PuzzlePieceShape.swift */; };
 		7AB085FCDD9511204164AB36 /* PuzzleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C296EE9FF4597197716209C /* PuzzleModel.swift */; };
 		99BD458BC82848DF0034F6DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F5570B9807AE413C7BCFD1 /* ContentView.swift */; };
+		A68942BDFBA51CDB03CF1E7E /* WoodTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23943C4E354FAA8BB401D3C9 /* WoodTheme.swift */; };
 		F9B71B6D99DCBF7E43B99F97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7FB720ACB619FC65608043 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E7FB720ACB619FC65608043 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		23943C4E354FAA8BB401D3C9 /* WoodTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WoodTheme.swift; sourceTree = "<group>"; };
 		7B47A77FE8335830A56F04B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8C296EE9FF4597197716209C /* PuzzleModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PuzzleModel.swift; sourceTree = "<group>"; };
 		C9383922BF378A57917D0B0E /* SuperPuzzleApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuperPuzzleApp.swift; sourceTree = "<group>"; };
 		CE6EF06E94320C329CB907F3 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4461FC118614DEFC69BC220 /* SuperPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6F5570B9807AE413C7BCFD1 /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EBB86550294F6B61835D921A /* PuzzlePieceShape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PuzzlePieceShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 				8C296EE9FF4597197716209C /* PuzzleModel.swift */,
 				CE6EF06E94320C329CB907F3 /* Assets.xcassets */,
 				D70A0C8A909050A020069EE2 /* Preview Content */,
+				EBB86550294F6B61835D921A /* PuzzlePieceShape.swift */,
+				23943C4E354FAA8BB401D3C9 /* WoodTheme.swift */,
 			);
 			path = SuperPuzzleIOS;
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 				7473752D02B62FC7BA17189D /* SuperPuzzleApp.swift in Sources */,
 				99BD458BC82848DF0034F6DF /* ContentView.swift in Sources */,
 				7AB085FCDD9511204164AB36 /* PuzzleModel.swift in Sources */,
+				78EF4687106BEE82B151BA3D /* PuzzlePieceShape.swift in Sources */,
+				A68942BDFBA51CDB03CF1E7E /* WoodTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,12 +24,14 @@ enum PuzzleDifficulty: String, CaseIterable, Identifiable {
     }
 }
 
-/// 单块拼图，image 是已经按矩形网格裁切后的图片。
+/// 单块拼图，包含异形图片和四条拼接边。
 struct PuzzlePiece: Identifiable {
     /// 拼图原始位置。
     let id: Int
     /// 当前显示的图片内容。
     let image: UIImage
+    /// 拼图四条边的榫槽形态。
+    let edges: PuzzleEdges
 }
 
 /// 拼图状态、切片和交换逻辑。
@@ -48,7 +50,7 @@ final class PuzzleViewModel: ObservableObject {
     /// 是否完成当前拼图。
     @Published private(set) var isComplete = false
     /// 原图宽高比。
-    private var imageAspect: CGFloat = 16 / 9
+    private(set) var imageAspect: CGFloat = 16 / 9
     /// 计时器任务。
     private var timer: Timer?
 
@@ -102,21 +104,70 @@ final class PuzzleViewModel: ObservableObject {
     /// 停止计时器并释放资源。
     func stopTimer() { timer?.invalidate(); timer = nil }
 
-    /// 将原图按照行列裁成矩形图片，保持图片完整比例。
+    /// 将原图按照行列裁成带互补榫槽的异形拼图图片。
     /// - Parameters:
     ///   - image: 原始图片。
     ///   - rows: 行数。
     ///   - columns: 列数。
     /// - Returns: 按从左到右、从上到下排列的拼图块。
     private static func slice(image: UIImage, rows: Int, columns: Int) -> [PuzzlePiece] {
-        guard let cgImage = image.cgImage else { return [] }
-        let width = cgImage.width, height = cgImage.height
-        return (0..<(rows * columns)).compactMap { index in
-            let row = index / columns, column = index % columns
-            let x = column * width / columns, y = row * height / rows
-            let nextX = (column + 1) * width / columns, nextY = (row + 1) * height / rows
-            guard let cropped = cgImage.cropping(to: CGRect(x: x, y: y, width: nextX - x, height: nextY - y)) else { return nil }
-            return PuzzlePiece(id: index, image: UIImage(cgImage: cropped, scale: image.scale, orientation: image.imageOrientation))
+        let source = normalizedImage(image)
+        let cellWidth = source.size.width / CGFloat(columns)
+        let cellHeight = source.size.height / CGFloat(rows)
+        let marginX = cellWidth * 0.18
+        let marginY = cellHeight * 0.18
+        return (0..<(rows * columns)).map { index in
+            let row = index / columns
+            let column = index % columns
+            let edges = edges(row: row, column: column, rows: rows, columns: columns)
+            let renderSize = CGSize(width: cellWidth + marginX * 2, height: cellHeight + marginY * 2)
+            let format = UIGraphicsImageRendererFormat()
+            format.scale = 1
+            format.opaque = false
+            let pieceImage = UIGraphicsImageRenderer(size: renderSize, format: format).image { context in
+                let shape = PuzzlePieceShape(edges: edges).path(in: CGRect(origin: .zero, size: renderSize))
+                context.cgContext.addPath(shape.cgPath)
+                context.cgContext.clip()
+                source.draw(at: CGPoint(x: marginX - CGFloat(column) * cellWidth, y: marginY - CGFloat(row) * cellHeight))
+            }
+            return PuzzlePiece(id: index, image: pieceImage, edges: edges)
         }
+    }
+
+    /// 生成指定位置的四条边，并保证相邻拼图的榫槽严格互补。
+    /// - Parameters:
+    ///   - row: 拼图所在行。
+    ///   - column: 拼图所在列。
+    ///   - rows: 总行数。
+    ///   - columns: 总列数。
+    /// - Returns: 当前拼图四条边的形态。
+    private static func edges(row: Int, column: Int, rows: Int, columns: Int) -> PuzzleEdges {
+        let top = row == 0 ? PuzzleEdge.flat : boundaryEdge(row: row - 1, column: column).opposite
+        let left = column == 0 ? PuzzleEdge.flat : boundaryEdge(row: row, column: column - 1).opposite
+        let right = column == columns - 1 ? PuzzleEdge.flat : boundaryEdge(row: row, column: column)
+        let bottom = row == rows - 1 ? PuzzleEdge.flat : boundaryEdge(row: row, column: column)
+        return PuzzleEdges(top: top, right: right, bottom: bottom, left: left)
+    }
+
+    /// 根据网格坐标稳定生成凸榫或凹槽。
+    /// - Parameters:
+    ///   - row: 边所在行。
+    ///   - column: 边所在列。
+    /// - Returns: 当前边的确定形态。
+    private static func boundaryEdge(row: Int, column: Int) -> PuzzleEdge {
+        (row * 31 + column * 17).isMultiple(of: 2) ? .outward : .inward
+    }
+
+    /// 修正图片方向并限制处理尺寸，避免高难度切片占用过多内存。
+    /// - Parameter image: 相册读取的原图。
+    /// - Returns: 方向正确且最长边不超过 2048 像素的图片。
+    private static func normalizedImage(_ image: UIImage) -> UIImage {
+        let maxDimension: CGFloat = 2048
+        let scale = min(1, maxDimension / max(image.size.width, image.size.height))
+        let size = CGSize(width: image.size.width * scale, height: image.size.height * scale)
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        format.opaque = true
+        return UIGraphicsImageRenderer(size: size, format: format).image { _ in image.draw(in: CGRect(origin: .zero, size: size)) }
     }
 }
