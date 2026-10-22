@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2EA7E51C29C5A9CC1F514175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6EF06E94320C329CB907F3 /* Assets.xcassets */; };
+		2EA7E51C29C5A9CC1F514176 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CE6EF06E94320C329CB907F4 /* PrivacyInfo.xcprivacy */; };
 		2FE4954722ABA3CC35AF880B /* PuzzleVideoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571CCF8D99FD1040779763B0 /* PuzzleVideoTests.swift */; };
 		34B43EF984F817D87824C6FF /* PuzzleCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B917917E946F44A29A90B8 /* PuzzleCompletionView.swift */; };
 		62FD77F303E1750E31148790 /* PuzzleCompletionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E3D6D14A2CBDCFDCD5957 /* PuzzleCompletionTests.swift */; };
@@ -45,6 +46,7 @@
 		C9383922BF378A57917D0B0E /* SuperPuzzleApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuperPuzzleApp.swift; sourceTree = "<group>"; };
 		CB4E3D6D14A2CBDCFDCD5957 /* PuzzleCompletionTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PuzzleCompletionTests.swift; sourceTree = "<group>"; };
 		CE6EF06E94320C329CB907F3 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE6EF06E94320C329CB907F4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D4461FC118614DEFC69BC220 /* SuperPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6F5570B9807AE413C7BCFD1 /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EBB86550294F6B61835D921A /* PuzzlePieceShape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PuzzlePieceShape.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				D6F5570B9807AE413C7BCFD1 /* ContentView.swift */,
 				8C296EE9FF4597197716209C /* PuzzleModel.swift */,
 				CE6EF06E94320C329CB907F3 /* Assets.xcassets */,
+					CE6EF06E94320C329CB907F4 /* PrivacyInfo.xcprivacy */,
 				D70A0C8A909050A020069EE2 /* Preview Content */,
 				EBB86550294F6B61835D921A /* PuzzlePieceShape.swift */,
 				23943C4E354FAA8BB401D3C9 /* WoodTheme.swift */,
@@ -103,7 +106,6 @@
 				571CCF8D99FD1040779763B0 /* PuzzleVideoTests.swift */,
 				CB4E3D6D14A2CBDCFDCD5957 /* PuzzleCompletionTests.swift */,
 			);
-			name = SuperPuzzleIOSTests;
 			path = SuperPuzzleIOSTests;
 			sourceTree = "<group>";
 		};
@@ -225,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EA7E51C29C5A9CC1F514175 /* Assets.xcassets in Resources */,
+					2EA7E51C29C5A9CC1F514176 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +429,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Super Puzzle";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.superpuzzle.app;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -448,7 +451,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Super Puzzle";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.superpuzzle.app;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;

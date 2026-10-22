@@ -276,7 +276,9 @@ struct ContentView: View {
             Spacer(minLength: 12)
             Button {
                 model.stopTimer()
-                video.pause()
+                video.reset()
+                sourceImage = nil
+                selectedPhoto = nil
                 showingGame = false
             } label: { Image(systemName: "xmark").frame(width: 44, height: 44) }
             .background(Color.puzzleCharcoal).clipShape(Circle()).accessibilityLabel(language.text("重新选择", "Choose Again"))
@@ -712,7 +714,8 @@ private struct LegalView: View {
                 LegalSection(title: "4. 本地存储", body: "您选择的界面语言会保存在设备的 App 偏好设置中。拼图进度和所选媒体不会同步到服务器，本 App 也不提供云端备份。卸载 App 时，系统会移除其本地数据。"),
                 LegalSection(title: "5. 系统权限", body: "本 App 通过 Apple 提供的系统照片选择器获取单次选择的媒体，不要求访问完整照片图库。系统和 App Store 可能依照 Apple 自身政策处理诊断、购买或分发信息，该等处理不由本 App 控制。"),
                 LegalSection(title: "6. 儿童隐私", body: "由于本 App 不收集或传输个人信息，因此也不会主动收集儿童的个人信息。监护人仍应根据实际情况指导儿童使用设备和媒体内容。"),
-                LegalSection(title: "7. 协议更新", body: "如功能或数据处理方式发生变化，本协议将随 App 更新，并在本页面说明新的生效日期。")
+                LegalSection(title: "7. 协议更新", body: "如功能或数据处理方式发生变化，本协议将随 App 更新，并在本页面说明新的生效日期。"),
+                LegalSection(title: "8. 联系我们", body: "如对本隐私协议有疑问，请发送邮件至 wt1377126991@163.com，或访问 https://wutao66.github.io/superpuzzle/support.html。请勿在公开反馈中附带私人照片或视频。")
             ]
         case (.privacy, .english):
             return [
@@ -722,7 +725,8 @@ private struct LegalView: View {
                 LegalSection(title: "4. Local Storage", body: "Your language choice is stored in the App's local preferences. Puzzle progress and selected media are not synchronized to a server, and the App provides no cloud backup. The system removes local App data when the App is uninstalled."),
                 LegalSection(title: "5. System Services", body: "The App uses Apple's system photo picker to receive only the media you select and does not request full photo-library access. Apple and the App Store may process diagnostic, purchase, or distribution information under their own policies; that processing is outside this App's control."),
                 LegalSection(title: "6. Children's Privacy", body: "Because the App does not collect or transmit personal information, it does not knowingly collect children's personal information. Guardians should still supervise device and media use as appropriate."),
-                LegalSection(title: "7. Policy Updates", body: "If the App's features or data practices change, this policy will be updated with the App and will show a new effective date on this page.")
+                LegalSection(title: "7. Policy Updates", body: "If the App's features or data practices change, this policy will be updated with the App and will show a new effective date on this page."),
+                LegalSection(title: "8. Contact Us", body: "For privacy questions, email wt1377126991@163.com or visit https://wutao66.github.io/superpuzzle/support.html. Do not include private photos or videos in a public report.")
             ]
         case (.terms, .chinese):
             return [

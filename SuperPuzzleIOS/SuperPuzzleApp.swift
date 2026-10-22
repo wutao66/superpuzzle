@@ -34,6 +34,7 @@ private struct AppRootView: View {
         }
         .environment(\.locale, language.locale)
         .task {
+            PuzzleVideoController.removeAllImportedFiles()
             try? await Task.sleep(nanoseconds: 1_150_000_000)
             withAnimation(.easeInOut(duration: 0.35)) {
                 isShowingLaunch = false

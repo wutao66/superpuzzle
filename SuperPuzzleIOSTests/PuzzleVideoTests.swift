@@ -7,7 +7,9 @@ import UIKit
 @MainActor
 final class PuzzleVideoTests: XCTestCase {
     private func makeVideo(portrait: Bool = false) async throws -> URL {
-        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        let importRoot = FileManager.default.temporaryDirectory.appendingPathComponent("SuperPuzzleImports", isDirectory: true)
+        try FileManager.default.createDirectory(at: importRoot, withIntermediateDirectories: true)
+        let directory = importRoot.appendingPathComponent(UUID().uuidString, isDirectory: true)
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
         let url = directory.appendingPathComponent("fixture.mov")
         let writer = try AVAssetWriter(outputURL: url, fileType: .mov)
@@ -150,7 +152,9 @@ final class PuzzleVideoTests: XCTestCase {
     }
 
     func testCanvasDrawsSharedFrameAtEachPiecesOriginalPosition() async throws {
-        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 90, height: 90))
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 90, height: 90), format: format)
         let colors: [UIColor] = [.red, .green, .blue, .yellow, .cyan, .magenta, .orange, .purple, .brown]
         let mosaic = renderer.image { context in
             for index in colors.indices {

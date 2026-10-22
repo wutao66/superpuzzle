@@ -9,9 +9,15 @@ import UniformTypeIdentifiers
 struct ImportedPuzzleVideo: Transferable {
     let url: URL
 
+    private static var importRoot: URL {
+        FileManager.default.temporaryDirectory.appendingPathComponent("SuperPuzzleImports", isDirectory: true)
+    }
+
     static var transferRepresentation: some TransferRepresentation {
         FileRepresentation(importedContentType: .movie) { received in
-            let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
+            let root = importRoot
+            try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true)
+            let directory = root.appendingPathComponent(UUID().uuidString, isDirectory: true)
             try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
             let url = directory.appendingPathComponent(received.file.lastPathComponent)
             do {
@@ -241,19 +247,29 @@ final class PuzzleVideoController: NSObject, ObservableObject {
         renderingFrame = false
     }
 
-    static func removeImportedFile(at url: URL) {
+    nonisolated static func removeImportedFile(at url: URL) {
         // 只删除导入器创建的 UUID 子目录，避免触碰其他来源的文件。
         let directory = url.deletingLastPathComponent()
-        let temporary = FileManager.default.temporaryDirectory.standardizedFileURL
-        guard directory.deletingLastPathComponent().standardizedFileURL == temporary,
+        let importRoot = FileManager.default.temporaryDirectory
+            .appendingPathComponent("SuperPuzzleImports", isDirectory: true)
+            .standardizedFileURL
+        guard directory.deletingLastPathComponent().standardizedFileURL == importRoot,
               UUID(uuidString: directory.lastPathComponent) != nil else { return }
         try? FileManager.default.removeItem(at: directory)
+    }
+
+    /// 清理上次异常退出时可能遗留的导入视频。
+    nonisolated static func removeAllImportedFiles() {
+        let importRoot = FileManager.default.temporaryDirectory
+            .appendingPathComponent("SuperPuzzleImports", isDirectory: true)
+        try? FileManager.default.removeItem(at: importRoot)
     }
 
     deinit {
         displayLink?.invalidate()
         if let endObserver { NotificationCenter.default.removeObserver(endObserver) }
         player?.pause()
+        if let source { Self.removeImportedFile(at: source.url) }
     }
 }
 
