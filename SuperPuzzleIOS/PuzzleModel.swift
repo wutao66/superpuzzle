@@ -43,6 +43,8 @@ final class PuzzleViewModel: ObservableObject {
     @Published private(set) var pieces: [PuzzlePiece] = []
     /// 已选择、等待交换的棋盘位置。
     @Published var selectedIndex: Int?
+    /// 当前建议交换的位置，交换或重新打乱后清除。
+    @Published private(set) var hint: (source: Int, destination: Int)?
     /// 当前计时秒数。
     @Published private(set) var elapsedSeconds = 0
     /// 是否已经开始游戏。
@@ -53,6 +55,9 @@ final class PuzzleViewModel: ObservableObject {
     private(set) var imageAspect: CGFloat = 16 / 9
     /// 计时器任务。
     private var timer: Timer?
+    /// 长按拾取和交换成功时的触觉反馈。
+    private let pickupFeedback = UIImpactFeedbackGenerator(style: .light)
+    private let swapFeedback = UIImpactFeedbackGenerator(style: .medium)
 
     /// 当前难度对应的最优矩形行列数。
     var grid: (rows: Int, columns: Int) {
@@ -68,16 +73,21 @@ final class PuzzleViewModel: ObservableObject {
 
     /// 根据相册图片创建矩形拼图块。
     /// - Parameter image: 用户选择的原图。
-    func start(with image: UIImage) {
+    func start(with image: UIImage, usesVideo: Bool = false) {
         stopTimer()
         imageAspect = image.size.width / max(image.size.height, 1)
         let layout = grid
-        pieces = Self.slice(image: image, rows: layout.rows, columns: layout.columns)
+        pieces = Self.slice(image: image, rows: layout.rows, columns: layout.columns, renderImages: !usesVideo)
         shuffle()
         isPlaying = true
         isComplete = false
         elapsedSeconds = 0
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in self?.elapsedSeconds += 1 }
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+            Task { @MainActor in
+                guard let self, self.timer != nil, !self.isComplete else { return }
+                self.elapsedSeconds += 1
+            }
+        }
     }
 
     /// 重新打乱当前棋盘。
@@ -85,20 +95,51 @@ final class PuzzleViewModel: ObservableObject {
         guard !pieces.isEmpty else { return }
         repeat { pieces.shuffle() } while pieces.enumerated().allSatisfy { $0.offset == $0.element.id }
         selectedIndex = nil
+        hint = nil
         isComplete = false
+    }
+
+    /// 优先帮助选中的错位拼图归位，否则提示第一块错位拼图。
+    func showHint() {
+        guard isPlaying, !isComplete else { return }
+        let source: Int
+        if let selectedIndex, pieces.indices.contains(selectedIndex), pieces[selectedIndex].id != selectedIndex {
+            source = selectedIndex
+        } else if let misplaced = pieces.indices.first(where: { pieces[$0].id != $0 }) {
+            source = misplaced
+        } else { return }
+        hint = (source, pieces[source].id)
+        selectedIndex = nil
     }
 
     /// 处理用户点击并在第二次点击时交换两块拼图。
     /// - Parameter index: 被点击的棋盘位置。
     func tap(index: Int) {
-        guard !isComplete else { return }
+        guard !isComplete, pieces.indices.contains(index) else { return }
         if let first = selectedIndex {
             guard first != index else { selectedIndex = nil; return }
-            pieces.swapAt(first, index)
-            selectedIndex = nil
-            isComplete = pieces.enumerated().allSatisfy { $0.offset == $0.element.id }
-            if isComplete { stopTimer() }
+            swap(from: first, to: index)
         } else { selectedIndex = index }
+    }
+
+    /// 长按识别后选中拼图，并立即提供一次拾取反馈。
+    func pickUp(index: Int) {
+        guard !isComplete, pieces.indices.contains(index) else { return }
+        selectedIndex = index
+        pickupFeedback.impactOccurred()
+        swapFeedback.prepare()
+    }
+
+    /// 在有效且不同的位置之间交换拼图，成功后提供一次触觉反馈。
+    func swap(from source: Int, to destination: Int) {
+        guard !isComplete, source != destination,
+              pieces.indices.contains(source), pieces.indices.contains(destination) else { return }
+        pieces.swapAt(source, destination)
+        selectedIndex = nil
+        hint = nil
+        swapFeedback.impactOccurred()
+        isComplete = pieces.enumerated().allSatisfy { $0.offset == $0.element.id }
+        if isComplete { stopTimer() }
     }
 
     /// 停止计时器并释放资源。
@@ -110,7 +151,7 @@ final class PuzzleViewModel: ObservableObject {
     ///   - rows: 行数。
     ///   - columns: 列数。
     /// - Returns: 按从左到右、从上到下排列的拼图块。
-    private static func slice(image: UIImage, rows: Int, columns: Int) -> [PuzzlePiece] {
+    private static func slice(image: UIImage, rows: Int, columns: Int, renderImages: Bool = true) -> [PuzzlePiece] {
         let source = normalizedImage(image)
         let cellWidth = source.size.width / CGFloat(columns)
         let cellHeight = source.size.height / CGFloat(rows)
@@ -120,6 +161,8 @@ final class PuzzleViewModel: ObservableObject {
             let row = index / columns
             let column = index % columns
             let edges = edges(row: row, column: column, rows: rows, columns: columns)
+            // 视频块只保存位置和轮廓，全部共享当前视频帧。
+            if !renderImages { return PuzzlePiece(id: index, image: source, edges: edges) }
             let renderSize = CGSize(width: cellWidth + marginX * 2, height: cellHeight + marginY * 2)
             let format = UIGraphicsImageRendererFormat()
             format.scale = 1

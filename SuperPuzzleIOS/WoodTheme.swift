@@ -18,6 +18,7 @@ struct WoodTexture: View {
             .scaledToFill()
             .overlay(tone == .walnut ? Color.black.opacity(0.34) : Color.black.opacity(0.08))
             .clipped()
+            .allowsHitTesting(false)
     }
 }
 

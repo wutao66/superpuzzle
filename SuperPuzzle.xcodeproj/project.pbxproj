@@ -8,20 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		2EA7E51C29C5A9CC1F514175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6EF06E94320C329CB907F3 /* Assets.xcassets */; };
+		2FE4954722ABA3CC35AF880B /* PuzzleVideoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571CCF8D99FD1040779763B0 /* PuzzleVideoTests.swift */; };
+		34B43EF984F817D87824C6FF /* PuzzleCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B917917E946F44A29A90B8 /* PuzzleCompletionView.swift */; };
+		62FD77F303E1750E31148790 /* PuzzleCompletionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4E3D6D14A2CBDCFDCD5957 /* PuzzleCompletionTests.swift */; };
 		7473752D02B62FC7BA17189D /* SuperPuzzleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9383922BF378A57917D0B0E /* SuperPuzzleApp.swift */; };
 		78EF4687106BEE82B151BA3D /* PuzzlePieceShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB86550294F6B61835D921A /* PuzzlePieceShape.swift */; };
 		7AB085FCDD9511204164AB36 /* PuzzleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C296EE9FF4597197716209C /* PuzzleModel.swift */; };
+		7B167E9D99F41E9372E2C11D /* PuzzleVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB452A6CAA31D82C95FE994 /* PuzzleVideo.swift */; };
+		8E54379D7DA9D54FEA6BA886 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7FB720ACB619FC65608043 /* Foundation.framework */; };
 		99BD458BC82848DF0034F6DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F5570B9807AE413C7BCFD1 /* ContentView.swift */; };
 		A68942BDFBA51CDB03CF1E7E /* WoodTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23943C4E354FAA8BB401D3C9 /* WoodTheme.swift */; };
+		D664F90E9BEF4BE9FD280AF1 /* VideoPuzzleBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE85205B70B6ABAE12992A3 /* VideoPuzzleBoard.swift */; };
 		F9B71B6D99DCBF7E43B99F97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7FB720ACB619FC65608043 /* Foundation.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD4CD01399292E190C18AB34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7257986C8A7A2B2749BE135D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD92738EA5A3C2E2A75F75C1;
+			remoteInfo = SuperPuzzle;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0E7FB720ACB619FC65608043 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		23943C4E354FAA8BB401D3C9 /* WoodTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WoodTheme.swift; sourceTree = "<group>"; };
+		2BE85205B70B6ABAE12992A3 /* VideoPuzzleBoard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VideoPuzzleBoard.swift; sourceTree = "<group>"; };
+		36B917917E946F44A29A90B8 /* PuzzleCompletionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PuzzleCompletionView.swift; sourceTree = "<group>"; };
+		571CCF8D99FD1040779763B0 /* PuzzleVideoTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PuzzleVideoTests.swift; sourceTree = "<group>"; };
 		7B47A77FE8335830A56F04B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7FB452A6CAA31D82C95FE994 /* PuzzleVideo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PuzzleVideo.swift; sourceTree = "<group>"; };
 		8C296EE9FF4597197716209C /* PuzzleModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PuzzleModel.swift; sourceTree = "<group>"; };
+		C1C62ED860AEE57D7129AC15 /* SuperPuzzleIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperPuzzleIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9383922BF378A57917D0B0E /* SuperPuzzleApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SuperPuzzleApp.swift; sourceTree = "<group>"; };
+		CB4E3D6D14A2CBDCFDCD5957 /* PuzzleCompletionTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PuzzleCompletionTests.swift; sourceTree = "<group>"; };
 		CE6EF06E94320C329CB907F3 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4461FC118614DEFC69BC220 /* SuperPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6F5570B9807AE413C7BCFD1 /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +59,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C761C6FA61389937A288A714 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E54379D7DA9D54FEA6BA886 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,6 +76,7 @@
 				A45D457465BD606DBB522773 /* Products */,
 				C12FF0D99CD9302FCAF889F5 /* Frameworks */,
 				25ABD460DFF60250C7448F84 /* SuperPuzzleIOS */,
+				2B56A072D40220101FAAA3A4 /* SuperPuzzleIOSTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,8 +90,21 @@
 				D70A0C8A909050A020069EE2 /* Preview Content */,
 				EBB86550294F6B61835D921A /* PuzzlePieceShape.swift */,
 				23943C4E354FAA8BB401D3C9 /* WoodTheme.swift */,
+				7FB452A6CAA31D82C95FE994 /* PuzzleVideo.swift */,
+				2BE85205B70B6ABAE12992A3 /* VideoPuzzleBoard.swift */,
+				36B917917E946F44A29A90B8 /* PuzzleCompletionView.swift */,
 			);
 			path = SuperPuzzleIOS;
+			sourceTree = "<group>";
+		};
+		2B56A072D40220101FAAA3A4 /* SuperPuzzleIOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				571CCF8D99FD1040779763B0 /* PuzzleVideoTests.swift */,
+				CB4E3D6D14A2CBDCFDCD5957 /* PuzzleCompletionTests.swift */,
+			);
+			name = SuperPuzzleIOSTests;
+			path = SuperPuzzleIOSTests;
 			sourceTree = "<group>";
 		};
 		4738E906C55846861626627D /* iOS */ = {
@@ -75,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				D4461FC118614DEFC69BC220 /* SuperPuzzle.app */,
+				C1C62ED860AEE57D7129AC15 /* SuperPuzzleIOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +160,24 @@
 			productReference = D4461FC118614DEFC69BC220 /* SuperPuzzle.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FF36FC12FC6111E07D942181 /* SuperPuzzleIOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B4329E1E95E858FF140B7BB /* Build configuration list for PBXNativeTarget "SuperPuzzleIOSTests" */;
+			buildPhases = (
+				54CAAD7D0CFE9910E0F44C87 /* Sources */,
+				C761C6FA61389937A288A714 /* Frameworks */,
+				926A76408652C78A2DBB3430 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA2602F9856C7F91FDEF5C6C /* PBXTargetDependency */,
+			);
+			name = SuperPuzzleIOSTests;
+			productName = SuperPuzzleIOSTests;
+			productReference = C1C62ED860AEE57D7129AC15 /* SuperPuzzleIOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -144,11 +207,19 @@
 			projectRoot = "";
 			targets = (
 				FD92738EA5A3C2E2A75F75C1 /* SuperPuzzle */,
+				FF36FC12FC6111E07D942181 /* SuperPuzzleIOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		926A76408652C78A2DBB3430 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B58158ACCD0163806583AD07 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,12 +240,49 @@
 				7AB085FCDD9511204164AB36 /* PuzzleModel.swift in Sources */,
 				78EF4687106BEE82B151BA3D /* PuzzlePieceShape.swift in Sources */,
 				A68942BDFBA51CDB03CF1E7E /* WoodTheme.swift in Sources */,
+				7B167E9D99F41E9372E2C11D /* PuzzleVideo.swift in Sources */,
+				D664F90E9BEF4BE9FD280AF1 /* VideoPuzzleBoard.swift in Sources */,
+				34B43EF984F817D87824C6FF /* PuzzleCompletionView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54CAAD7D0CFE9910E0F44C87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FE4954722ABA3CC35AF880B /* PuzzleVideoTests.swift in Sources */,
+				62FD77F303E1750E31148790 /* PuzzleCompletionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CA2602F9856C7F91FDEF5C6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SuperPuzzle;
+			target = FD92738EA5A3C2E2A75F75C1 /* SuperPuzzle */;
+			targetProxy = AD4CD01399292E190C18AB34 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		368D08F621ECB4DEBAFA364A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.SuperPuzzleIOSTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperPuzzle.app/SuperPuzzle";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		420E988B3AD53ED5A952C424 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -227,6 +335,21 @@
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
+		};
+		4991BC6313205447D649A19F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.SuperPuzzleIOSTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperPuzzle.app/SuperPuzzle";
+			};
+			name = Debug;
 		};
 		998F2883AF46D3FC3BC6A428 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -342,6 +465,15 @@
 			buildConfigurations = (
 				FD71228CFECFC47437108ED4 /* Release */,
 				B9DA665CB881CF5F9E17B10E /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B4329E1E95E858FF140B7BB /* Build configuration list for PBXNativeTarget "SuperPuzzleIOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				368D08F621ECB4DEBAFA364A /* Release */,
+				4991BC6313205447D649A19F /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
