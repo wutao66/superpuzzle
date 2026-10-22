@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wutao66.github.io/superpuzzle/sitemap.xml

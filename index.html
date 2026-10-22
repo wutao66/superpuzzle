@@ -3,58 +3,108 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f7f7f4" />
-    <title>Super Puzzle</title>
+    <meta name="theme-color" content="#181713" />
+    <meta name="description" content="Super Puzzle 是一款完全离线的 iPhone 与 iPad 照片、视频拼图 App。素材只在设备本地处理。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Super Puzzle - 把记忆拼回来" />
+    <meta property="og:description" content="照片与视频都能成为拼图。完全离线，为 iPhone 与 iPad 打造。" />
+    <meta property="og:image" content="https://wutao66.github.io/superpuzzle/assets/app-icon.png" />
+    <meta property="og:url" content="https://wutao66.github.io/superpuzzle/" />
+    <link rel="canonical" href="https://wutao66.github.io/superpuzzle/" />
+    <link rel="icon" href="assets/app-icon.png" />
+    <link rel="apple-touch-icon" href="assets/app-icon.png" />
     <link rel="stylesheet" href="styles.css" />
+    <title>Super Puzzle - 把记忆拼回来</title>
   </head>
-  <body>
-    <main class="app-shell">
-      <header class="topbar">
-        <a class="brand" href="#top" aria-label="Super Puzzle 首页">
-          <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
-          <span>SUPER PUZZLE</span>
-        </a>
-        <span class="topbar-note">把一张照片，变成一场专注</span>
-      </header>
-
-      <section id="top" class="setup-view" aria-labelledby="page-title">
-        <div class="intro-copy">
-          <p class="eyebrow">YOUR IMAGE · YOUR PACE</p>
-          <h1 id="page-title">拼出属于你的<br /><em>完整画面</em></h1>
-          <p class="intro-text">选择一张照片，设定难度，剩下的交给你的观察力。<br />拼图会根据照片比例自动切成大小合适的矩形。</p>
+  <body data-lang="zh" data-title-zh="Super Puzzle - 把记忆拼回来" data-title-en="Super Puzzle - Piece the Memory Back">
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a class="brand" href="index.html" aria-label="Super Puzzle"><img src="assets/launch-logo.png" alt="" width="30" height="30" /><span>SUPER PUZZLE</span></a>
+        <div class="nav-links">
+          <a href="#features"><span data-language="zh">功能</span><span data-language="en">Features</span></a>
+          <a href="privacy.html"><span data-language="zh">隐私</span><span data-language="en">Privacy</span></a>
+          <a href="support.html"><span data-language="zh">支持</span><span data-language="en">Support</span></a>
+          <a href="https://github.com/wutao66/superpuzzle" target="_blank" rel="noreferrer">GitHub</a>
         </div>
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Switch language"><span aria-hidden="true">文</span><span data-language="zh">English</span><span data-language="en">中文</span></button>
+      </nav>
+    </header>
 
-        <div class="setup-grid">
-          <label class="upload-zone" for="image-input">
-            <input id="image-input" type="file" accept="image/*" />
-            <div class="upload-preview" id="upload-preview">
-              <span class="upload-icon">＋</span>
-              <strong>选择一张图片</strong>
-              <span>支持 JPG、PNG、WEBP</span>
-            </div>
-          </label>
-
-          <div class="difficulty-panel">
-            <div class="panel-heading"><span>选择难度</span><span class="selected-count" id="selected-count">9 片</span></div>
-            <div class="difficulty-list" role="radiogroup" aria-label="拼图难度">
-              <button class="difficulty active" data-pieces="9" data-label="简单" role="radio" aria-checked="true"><span class="difficulty-name">简单</span><span class="difficulty-meta">9 片 · 约 2 分钟</span><b>01</b></button>
-              <button class="difficulty" data-pieces="100" data-label="普通" role="radio" aria-checked="false"><span class="difficulty-name">普通</span><span class="difficulty-meta">100 片 · 约 10 分钟</span><b>02</b></button>
-              <button class="difficulty" data-pieces="300" data-label="困难" role="radio" aria-checked="false"><span class="difficulty-name">困难</span><span class="difficulty-meta">300 片 · 约 30 分钟</span><b>03</b></button>
-              <button class="difficulty" data-pieces="1000" data-label="噩梦" role="radio" aria-checked="false"><span class="difficulty-name">噩梦</span><span class="difficulty-meta">1000 片 · 约 90 分钟</span><b>04</b></button>
-              <button class="difficulty" data-pieces="2000" data-label="地狱" role="radio" aria-checked="false"><span class="difficulty-name">地狱</span><span class="difficulty-meta">2000 片 · 挑战极限</span><b>05</b></button>
-            </div>
-            <button class="primary-button" id="start-button" disabled><span>开始拼图</span><span>→</span></button>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <img class="hero-icon" src="assets/app-icon.png" alt="Super Puzzle App Icon" width="112" height="112" />
+          <p class="eyebrow"><span data-language="zh">照片与视频拼图</span><span data-language="en">PHOTO &amp; VIDEO PUZZLES</span></p>
+          <h1 id="hero-title">Super Puzzle</h1>
+          <p class="hero-tagline"><span data-language="zh">把记忆拼回来</span><span data-language="en">Piece the memory back</span></p>
+          <p class="hero-copy"><span data-language="zh">从相册选一段记忆，在木桌般安静的界面里慢慢还原。无需账号，不连接网络。</span><span data-language="en">Choose a memory from your library and rebuild it in a calm, tactile workspace. No account. No network connection.</span></p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/wutao66/superpuzzle" target="_blank" rel="noreferrer"><span data-language="zh">查看 GitHub</span><span data-language="en">View on GitHub</span><span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="#features"><span data-language="zh">了解功能</span><span data-language="en">Explore Features</span><span aria-hidden="true">↓</span></a>
           </div>
+          <div class="hero-meta" aria-label="Availability"><span>iPhone · iPad</span><span><span data-language="zh">完全离线</span><span data-language="en">Fully Offline</span></span><span>iOS 16+</span></div>
         </div>
       </section>
 
-      <section class="game-view hidden" id="game-view" aria-labelledby="game-title">
-        <div class="game-header"><div><p class="eyebrow">CURRENT PUZZLE</p><h2 id="game-title">准备好了吗？</h2></div><button class="text-button" id="back-button">← 重新选择</button></div>
-        <div class="game-toolbar"><div class="stat"><span>难度</span><strong id="game-difficulty">简单</strong></div><div class="stat"><span>完成度</span><strong id="progress-value">0%</strong></div><div class="stat timer-stat"><span>用时</span><strong id="timer">00:00</strong></div><button class="reset-button" id="reset-button" title="重新打乱">↻ <span>重新打乱</span></button></div>
-        <div class="board-wrap"><div class="board" id="board" aria-label="拼图棋盘"></div><div class="board-hint" id="board-hint">点击两块拼图交换位置</div></div>
+      <section class="intro section-shell" id="features" aria-labelledby="features-title">
+        <div class="section-heading">
+          <p class="eyebrow"><span data-language="zh">专注于一件事</span><span data-language="en">ONE THING, DONE WELL</span></p>
+          <h2 id="features-title"><span data-language="zh">你的素材，你的节奏</span><span data-language="en">Your media, your pace</span></h2>
+          <p><span data-language="zh">没有登录、动态和广告。只需要选一张照片或一段视频，然后开始拼。</span><span data-language="en">No sign-in, feeds, or ads. Pick a photo or video, choose a challenge, and begin.</span></p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-item"><span class="feature-symbol" aria-hidden="true">▧</span><h3><span data-language="zh">照片与视频</span><span data-language="en">Photos &amp; Videos</span></h3><p><span data-language="zh">静态照片和动态视频都能成为拼图，画面比例会被完整保留。</span><span data-language="en">Turn still photos or moving videos into puzzles while preserving their original aspect ratio.</span></p></article>
+          <article class="feature-item"><span class="feature-symbol" aria-hidden="true">⌁</span><h3><span data-language="zh">五档难度</span><span data-language="en">Five Difficulties</span></h3><p><span data-language="zh">从 9 片到 2000 片，适合短暂放松，也能承载一场漫长挑战。</span><span data-language="en">From 9 to 2,000 pieces, for a quiet break or a serious long-form challenge.</span></p></article>
+          <article class="feature-item"><span class="feature-symbol" aria-hidden="true">◎</span><h3><span data-language="zh">触控与提示</span><span data-language="en">Touch &amp; Hints</span></h3><p><span data-language="zh">点击交换、长按拖动、双指缩放，并可在需要时获得一组明确提示。</span><span data-language="en">Tap to swap, press and drag, pinch to zoom, and ask for a clear hint when needed.</span></p></article>
+        </div>
       </section>
-      <footer><span>SUPER PUZZLE / 2026</span><span>专注当下，享受每一块</span></footer>
+
+      <section class="product-section" aria-labelledby="product-title">
+        <div class="product-copy">
+          <p class="eyebrow"><span data-language="zh">为不同屏幕而生</span><span data-language="en">BUILT FOR EVERY SCREEN</span></p>
+          <h2 id="product-title"><span data-language="zh">在 iPhone 上随时开始，在 iPad 上沉浸完成</span><span data-language="en">Start anywhere on iPhone. Settle in on iPad.</span></h2>
+          <p><span data-language="zh">iPad 横屏提供控制栏与大棋盘双栏布局，竖屏、Split View 和 Stage Manager 窗口会自动调整。</span><span data-language="en">iPad landscape pairs a focused control rail with a spacious board, while portrait, Split View, and Stage Manager adapt automatically.</span></p>
+          <ul class="check-list">
+            <li><span data-language="zh">支持 iPad 横屏、竖屏与多任务窗口</span><span data-language="en">Landscape, portrait, and multitasking support</span></li>
+            <li><span data-language="zh">棋盘缩放与拖动范围自动适应窗口</span><span data-language="en">Board zoom and pan adapt to the active window</span></li>
+            <li><span data-language="zh">中文与英语界面，首次启动跟随系统</span><span data-language="en">Chinese and English, selected from the system on first launch</span></li>
+          </ul>
+        </div>
+        <div class="device-stage" aria-label="Super Puzzle interface preview">
+          <div class="tablet-frame"><div class="tablet-screen">
+            <div class="mock-sidebar"><div class="mock-brand"><img src="assets/launch-logo.png" alt="" /><span>SUPER PUZZLE</span></div><p>CURRENT PUZZLE</p><strong><span data-language="zh">普通模式</span><span data-language="en">Normal Mode</span></strong><div class="mock-stats"><span>100<br /><small>PIECES</small></span><span>42%<br /><small>PROGRESS</small></span></div><div class="mock-hint"><span data-language="zh">提示</span><span data-language="en">Hint</span></div></div>
+            <div class="mock-board" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div></div>
+        </div>
+      </section>
+
+      <section class="privacy-band" aria-labelledby="privacy-title"><div class="privacy-inner">
+        <img src="assets/launch-logo.png" alt="" width="96" height="96" />
+        <div><p class="eyebrow"><span data-language="zh">隐私不是设置项</span><span data-language="en">PRIVACY IS NOT A SETTING</span></p><h2 id="privacy-title"><span data-language="zh">所有素材，只留在你的设备上</span><span data-language="en">Your media stays on your device</span></h2><p><span data-language="zh">Super Puzzle 不需要账号，不包含广告或分析服务，也不会上传你的照片、视频或拼图记录。</span><span data-language="en">Super Puzzle needs no account, contains no ads or analytics, and never uploads your photos, videos, or puzzle activity.</span></p><a class="text-link" href="privacy.html"><span data-language="zh">阅读隐私协议</span><span data-language="en">Read the Privacy Policy</span><span aria-hidden="true">→</span></a></div>
+      </div></section>
+
+      <section class="steps section-shell" aria-labelledby="steps-title">
+        <div class="section-heading compact"><p class="eyebrow"><span data-language="zh">三步开始</span><span data-language="en">START IN THREE STEPS</span></p><h2 id="steps-title"><span data-language="zh">简单进入，安静沉浸</span><span data-language="en">Easy to enter. Quietly absorbing.</span></h2></div>
+        <ol class="step-list">
+          <li><b>01</b><div><h3><span data-language="zh">选择素材</span><span data-language="en">Choose Media</span></h3><p><span data-language="zh">从系统相册选择照片或视频。</span><span data-language="en">Select a photo or video from the system picker.</span></p></div></li>
+          <li><b>02</b><div><h3><span data-language="zh">设定难度</span><span data-language="en">Set Difficulty</span></h3><p><span data-language="zh">选择 9、100、300、1000 或 2000 片。</span><span data-language="en">Choose 9, 100, 300, 1,000, or 2,000 pieces.</span></p></div></li>
+          <li><b>03</b><div><h3><span data-language="zh">开始还原</span><span data-language="en">Rebuild It</span></h3><p><span data-language="zh">交换、拖动、缩放，直到记忆完整。</span><span data-language="en">Swap, drag, and zoom until the memory is whole.</span></p></div></li>
+        </ol>
+      </section>
+
+      <section class="faq section-shell" aria-labelledby="faq-title">
+        <div class="section-heading compact"><p class="eyebrow"><span data-language="zh">常见问题</span><span data-language="en">COMMON QUESTIONS</span></p><h2 id="faq-title"><span data-language="zh">开始之前</span><span data-language="en">Before you begin</span></h2></div>
+        <div class="faq-list">
+          <details><summary><span data-language="zh">App 需要联网吗？</span><span data-language="en">Does the App need internet access?</span></summary><p><span data-language="zh">不需要。核心功能完全离线运行，也没有账号、广告或分析服务。</span><span data-language="en">No. Core features run entirely offline, with no accounts, ads, or analytics.</span></p></details>
+          <details><summary><span data-language="zh">会访问整个照片图库吗？</span><span data-language="en">Does it access my whole photo library?</span></summary><p><span data-language="zh">不会。App 使用 Apple 系统照片选择器，只能读取你明确选择的素材。</span><span data-language="en">No. The App uses Apple's system picker and receives only the media you explicitly choose.</span></p></details>
+          <details><summary><span data-language="zh">支持哪些设备？</span><span data-language="en">Which devices are supported?</span></summary><p><span data-language="zh">支持运行 iOS 或 iPadOS 16 及以上版本的 iPhone 和 iPad。</span><span data-language="en">iPhone and iPad devices running iOS or iPadOS 16 and later are supported.</span></p></details>
+        </div>
+      </section>
+
+      <section class="closing"><img src="assets/app-icon.png" alt="" width="88" height="88" /><h2><span data-language="zh">留一点时间，把记忆拼回来</span><span data-language="en">Take a moment. Piece the memory back.</span></h2><p><span data-language="zh">Super Puzzle 即将登陆 App Store。</span><span data-language="en">Super Puzzle is coming soon to the App Store.</span></p><a class="button button-dark" href="https://github.com/wutao66/superpuzzle" target="_blank" rel="noreferrer"><span data-language="zh">关注项目进展</span><span data-language="en">Follow the Project</span><span aria-hidden="true">↗</span></a></section>
     </main>
+
+    <footer class="site-footer"><div class="footer-shell"><div><strong>SUPER PUZZLE</strong><p>© <span data-current-year>2026</span> Super Puzzle</p></div><div class="footer-links"><a href="privacy.html"><span data-language="zh">隐私协议</span><span data-language="en">Privacy</span></a><a href="terms.html"><span data-language="zh">用户协议</span><span data-language="en">Terms</span></a><a href="support.html"><span data-language="zh">支持</span><span data-language="en">Support</span></a><a href="https://github.com/wutao66/superpuzzle" target="_blank" rel="noreferrer">GitHub</a></div></div></footer>
     <script src="app.js"></script>
   </body>
 </html>
